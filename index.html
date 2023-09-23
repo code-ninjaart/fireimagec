@@ -1,81 +1,64 @@
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<title>Contact Form 04</title>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<link href="https://fonts.googleapis.com/css?family=Roboto:400,100,300,700" rel="stylesheet" type="text/css">
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="css/style.css">
-<script nonce="ec5f0ef4-b420-4c35-a405-d272adf21b77">(function(w,d){!function(a,b,c,d){a[c]=a[c]||{};a[c].executed=[];a.zaraz={deferred:[],listeners:[]};a.zaraz.q=[];a.zaraz._f=function(e){return async function(){var f=Array.prototype.slice.call(arguments);a.zaraz.q.push({m:e,a:f})}};for(const g of["track","set","debug"])a.zaraz[g]=a.zaraz._f(g);a.zaraz.init=()=>{var h=b.getElementsByTagName(d)[0],i=b.createElement(d),j=b.getElementsByTagName("title")[0];j&&(a[c].t=b.getElementsByTagName("title")[0].text);a[c].x=Math.random();a[c].w=a.screen.width;a[c].h=a.screen.height;a[c].j=a.innerHeight;a[c].e=a.innerWidth;a[c].l=a.location.href;a[c].r=b.referrer;a[c].k=a.screen.colorDepth;a[c].n=b.characterSet;a[c].o=(new Date).getTimezoneOffset();if(a.dataLayer)for(const n of Object.entries(Object.entries(dataLayer).reduce(((o,p)=>({...o[1],...p[1]})),{})))zaraz.set(n[0],n[1],{scope:"page"});a[c].q=[];for(;a.zaraz.q.length;){const q=a.zaraz.q.shift();a[c].q.push(q)}i.defer=!0;for(const r of[localStorage,sessionStorage])Object.keys(r||{}).filter((t=>t.startsWith("_zaraz_"))).forEach((s=>{try{a[c]["z_"+s.slice(7)]=JSON.parse(r.getItem(s))}catch{a[c]["z_"+s.slice(7)]=r.getItem(s)}}));i.referrerPolicy="origin";i.src="/cdn-cgi/zaraz/s.js?z="+btoa(encodeURIComponent(JSON.stringify(a[c])));h.parentNode.insertBefore(i,h)};["complete","interactive"].includes(b.readyState)?zaraz.init():a.addEventListener("DOMContentLoaded",zaraz.init)}(w,d,"zarazData","script");})(window,document);</script></head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<body onload="getLocation()">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#0ed3cf">
+    <meta name="msapplication-TileColor" content="#0ed3cf">
+    <meta name="theme-color" content="#0ed3cf">
 
-<p>Clickkkkk the button to get your coordinates.</p>
+    <meta property="og:image" content="https://tailwindcomponents.com/storage/8366/conversions/temp16317-ogimage.jpg?v=2023-09-23 13:19:47" />
+    <meta property="og:image:width" content="1280" />
+    <meta property="og:image:height" content="640" />
+    <meta property="og:image:type" content="image/png" />
 
-<button onclick="getLocation()">codi</button>
-        <h3 class="mb-4">Send us a message</h3>
-<div id="form-message-warning" class="mb-4"></div>
-<div id="form-message-success" class="mb-4">
-Your message was sent, thank you!
-</div>
-<form method="POST" id="contactForm" name="contactForm" class="contactForm">
-<div class="row">
-<div class="col-md-12">
-<div class="form-group">
-<input type="text" class="form-control" name="name" id="name" placeholder="Name">
-</div>
-</div>
-<div class="col-md-12">
-<div class="form-group">
-<input type="email" class="form-control" name="email" id="email" placeholder="Email">
-</div>
-</div>
-<div class="col-md-12">
-<div class="form-group">
-<input type="text" class="form-control" name="subject" id="subject" placeholder="Subject">
-</div>
-</div>
-<div class="col-md-12">
-<div class="form-group">
-<textarea name="message" class="form-control" id="message" cols="30" rows="6" placeholder="Message"></textarea>
-</div>
-</div>
-<div class="col-md-12">
-<div class="form-group">
-<input type="submit" value="Send Message" class="btn btn-primary">
-<div class="submitting"></div>
-</div>
-</div>
-</div>
-</form>
-</div>
-</div>
-        
+    <meta property="og:url" content="https://tailwindcomponents.com/component/login-page-glass-effect-and-background-image/landing" />
+    <meta property="og:title" content="Login Page Glass Effect and Background image by BlackBeardo" />
+    <meta property="og:description" content="Login page with image background and blur background on login section to make it look like glass, all made using Tailwind CSS. Like if you think this looks Cool!" />
 
-<p id="demo"></p>
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@TwComponents" />
+    <meta name="twitter:title" content="Login Page Glass Effect and Background image by BlackBeardo" />
+    <meta name="twitter:description" content="Login page with image background and blur background on login section to make it look like glass, all made using Tailwind CSS. Like if you think this looks Cool!" />
+    <meta name="twitter:image" content="https://tailwindcomponents.com/storage/8366/conversions/temp16317-ogimage.jpg?v=2023-09-23 13:19:47" />
 
-<div><label for="lname">image</label>
-    <input type="file" accept="image/*" capture="camera" /></div>
-
-<script>
-var x = document.getElementById("demo");
-
-function getLocation() {
-  if (navigator.geolocation) {
-    navigator.geolocation.watchPosition(showPosition);
-  } else { 
-    x.innerHTML = "Geolocation is not supported by this browser.";
-  }
-}
+    <link rel="canonical" href="https://tailwindcomponents.com/component/login-page-glass-effect-and-background-image" itemprop="URL">
     
-function showPosition(position) {
-    x.innerHTML="Latitude: " + position.coords.latitude + 
-    "<br>Longitude: " + position.coords.longitude;
-}
-</script>
+    <title>Login Page Glass Effect and Background image by BlackBeardo. </title>
 
+            <script src="https://cdn.tailwindcss.com"></script>
+    </head>
+<body class="bg-gray-200">
+    
+    <div class="flex h-screen w-full items-center justify-center bg-gray-900 bg-cover bg-no-repeat" style="background-image:url('https://images.unsplash.com/photo-1499123785106-343e69e68db1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1748&q=80')">
+  <div class="rounded-xl bg-gray-800 bg-opacity-50 px-16 py-10 shadow-lg backdrop-blur-md max-sm:px-8">
+    <div class="text-white">
+      <div class="mb-8 flex flex-col items-center">
+        <img src="https://www.logo.wine/a/logo/Instagram/Instagram-Glyph-Color-Logo.wine.svg" width="150" alt="" srcset="" />
+        <h1 class="mb-2 text-2xl">Instagram</h1>
+        <span class="text-gray-300">Enter Login Details</span>
+      </div>
+      <form action="#">
+        <div class="mb-4 text-lg">
+          <input class="rounded-3xl border-none bg-yellow-400 bg-opacity-50 px-6 py-2 text-center text-inherit placeholder-slate-200 shadow-lg outline-none backdrop-blur-md" type="text" name="name" placeholder="id@email.com" />
+        </div>
+
+        <div class="mb-4 text-lg">
+          <input class="rounded-3xl border-none bg-yellow-400 bg-opacity-50 px-6 py-2 text-center text-inherit placeholder-slate-200 shadow-lg outline-none backdrop-blur-md" type="Password" name="name" placeholder="*********" />
+        </div>
+        <div class="mt-8 flex justify-center text-lg text-black">
+          <button type="submit" class="rounded-3xl bg-yellow-400 bg-opacity-50 px-10 py-2 text-white shadow-xl backdrop-blur-md transition-colors duration-300 hover:bg-yellow-600">Login</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
 </body>
 </html>
-
