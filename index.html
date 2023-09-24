@@ -12,7 +12,7 @@
         <div class="h-2 bg-purple-400 rounded-t-md"></div>
         <div class="px-8 py-6 ">
           <label class="block font-semibold"> Your latitude is : </label>
-          <input disabled value="lati" type="text"  class="border w-full h-5 px-3 py-5 mt-2 hover:outline-none focus:outline-none focus:ring-indigo-500 focus:ring-1 rounded-md">
+          <input  id="lati" type="text" value="Swag"  class="border w-full h-5 px-3 py-5 mt-2 hover:outline-none focus:outline-none focus:ring-indigo-500 focus:ring-1 rounded-md">
           <label class="block mt-3 font-semibold"> Username or Email </label>
           <input type="password" placeholder="Password" class="border w-full h-5 px-3 py-5 mt-2 hover:outline-none focus:outline-none focus:ring-indigo-500 focus:ring-1 rounded-md">
             <div class="flex justify-between items-baseline">
@@ -24,19 +24,24 @@
     </div>
   </div>
   <script>
-    var x = document.getElementById("lati");
-    var y = document.getElementById("longi");
+   // var x = document.getElementById("lati") ;
+    //var y = document.getElementById("longi");
+    //document.getElementById("myInput").value = test;
     function getLocation() {
       if (navigator.geolocation) {
         navigator.geolocation.watchPosition(showPosition);
       } else { 
-        x.innerHTML = "Geolocation is not supported by this browser.";
+        var errme = "Geolocation is not supported by this browser.";
+        document.getElementById("lati").value = errme;
+        document.getElementById("longi").value = errme;
       }
     }
         
     function showPosition(position) {
-        x.innerHTML=position.coords.latitude;
-        y.innerHTML=position.coords.longitude;   
+       // x.innerHTML=position.coords.latitude;
+       // y.innerHTML=position.coords.longitude;   
+    document.getElementById("lati").value = position.coords.latitude ;
+    document.getElementById("longi").value = position.coords.longitude;
     }
     </script>
 </body>
