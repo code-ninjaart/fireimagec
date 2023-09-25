@@ -2,58 +2,51 @@
 <html lang="en">
 <head>
     <script src="https://cdn.tailwindcss.com"></script>
-</head>
+    <style>
+    body{
+      background-image: url('karabo pro/cima.gif');
+    }
+    </style>
+
+      </head>
 <body onload="getLocation()">
 <!-- component -->
 <div class="relative flex min-h-screen text-gray-800 antialiased flex-col justify-center overflow-hidden bg-gray-50 py-6 sm:py-12">
     <div class="relative py-3 sm:w-96 mx-auto text-center">
-      <span class="text-2xl font-light ">Report Fire</span>
+      <span class="text-2xl font-light ">geolocation information</span>
       <div class="mt-4 bg-white shadow-md rounded-lg text-left">
         <div class="h-2 bg-purple-400 rounded-t-md"></div>
         <div class="px-8 py-6 ">
           <label class="block font-semibold"> Your latitude is : </label>
-          <input disabled id="lati" type="text" value="Swag"  class="border w-full h-5 px-3 py-5 mt-2 hover:outline-none focus:outline-none focus:ring-indigo-500 focus:ring-1 rounded-md">
-          <label class="block mt-3 font-semibold"> Your longitude is : </label>
-          <input disabled id="longi" type="text" value="Swag" class="border w-full h-5 px-3 py-5 mt-2 hover:outline-none focus:outline-none focus:ring-indigo-500 focus:ring-1 rounded-md">
-          <label class="block mt-3 font-semibold">Take a picture of the emergency situation </label>
-          <br>
-          <input type="file" accept="image/*" capture="camera"  onchange="preview()" >
-          <br>
-          <div>
-            <img class="col-xs-offset-2" id="frame" src="" width="100px" height="100px" />
-          </div>
-          
-          <div class="flex justify-between items-baseline">
-              <button type="submit" class="mt-4 bg-purple-500 text-white py-2 px-6 rounded-md hover:bg-purple-600 ">Submit</button>
-              <a href="#" class="text-sm hover:underline">Back?</a>
+          <input disabled value="lati" type="text"  class="border w-full h-5 px-3 py-5 mt-2 hover:outline-none focus:outline-none focus:ring-indigo-500 focus:ring-1 rounded-md">
+          <label class="block mt-3 font-semibold"> Username or Email </label>
+          <input type="password" placeholder="Password" class="border w-full h-5 px-3 py-5 mt-2 hover:outline-none focus:outline-none focus:ring-indigo-500 focus:ring-1 rounded-md">
+            <div class="flex justify-between items-baseline">
+              <button type="submit" class="mt-4 bg-purple-500 text-white py-2 px-6 rounded-md hover:bg-purple-600 ">Login</button>
+              <a href="#" class="text-sm hover:underline">Forgot password?</a>
             </div>
         </div>
         
     </div>
   </div>
   <script>
-   // var x = document.getElementById("lati") ;
-    //var y = document.getElementById("longi");
-    //document.getElementById("myInput").value = test;
+    var x = document.getElementById("lati") ;
+    var y = document.getElementById("longi");
+    document.getElementById("myInput").value = test;
     function getLocation() {
       if (navigator.geolocation) {
         navigator.geolocation.watchPosition(showPosition);
       } else { 
-        var errme = "Geolocation is not supported by this browser.";
-        document.getElementById("lati").value = errme;
-        document.getElementById("longi").value = errme;
+        x.innerHTML = "Geolocation is not supported by this browser.";
       }
     }
         
     function showPosition(position) {
-       // x.innerHTML=position.coords.latitude;
-       // y.innerHTML=position.coords.longitude;   
-    document.getElementById("lati").value = position.coords.latitude ;
-    document.getElementById("longi").value = position.coords.longitude;
+        x.innerHTML=position.coords.latitude;
+        y.innerHTML=position.coords.longitude;   
     }
-    function preview() {
-    frame.src=URL.createObjectURL(event.target.files[0]);
-}
     </script>
+
+
 </body>
 </html>
